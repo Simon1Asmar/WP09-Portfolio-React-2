@@ -1,0 +1,65 @@
+.form-container form{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1em;
+  padding: 1em;
+
+  width: 80vw;
+}
+
+.form-container form>input,
+.form-container form>textarea,
+.form-container form>button{
+  padding: 1em;
+  border: white solid 0.2em;
+  border-radius: 15px;
+  background-color: rgba(0, 0, 0, 0.5);
+
+  width: 80vw;
+
+  color: white;
+  font-size: 1em;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.form-container form>button{
+  width: fit-content;
+  border-radius: 1.4em;
+
+  cursor: pointer;
+
+  text-transform: uppercase;
+
+}
+
+/* .form-container>h1{
+  font-size: 2em;
+
+  color: white;
+
+
+  color: rgb(208, 143, 255);
+  border-color: rgb(208, 143, 255);
+  
+} */
+
+textarea{
+  resize: none;
+}
+
+.form-container form>input:hover,
+.form-container form>textarea:hover,
+.form-container form>button:hover{
+  color: rgb(208, 143, 255);
+  border-color: rgb(208, 143, 255);
+}
+
+.form-container form>input:focus,
+.form-container form>textarea:focus{
+  outline: none;
+  
+  color: rgb(195, 110, 255);
+  border-color: rgb(195, 110, 255);
+}

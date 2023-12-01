@@ -1,0 +1,44 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items:center;
+
+  /* background-color: #535bf2; */
+  /* background-color: #212; */
+  /* background-color:rgb(47, 158, 255); */
+  background-color: #111;
+
+  min-width: 320px;
+  min-height: 100vh;
+
+  text-align: center;
+
+  /* color: rgb(255, 255, 255); */
+  /* color: #212; */
+  /* color: rgb(195, 110, 255); */
+  /* color: #111; */
+  color: white;
+  
+  position: relative;
+
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+a{
+  /* color: bisque; */
+  color: rgb(195, 110, 255);
+  text-decoration: none;
+}
+
+a:hover{
+  /* color: blanchedalmond; */
+  color: rgb(208, 143, 255);
+}

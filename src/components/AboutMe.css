@@ -1,0 +1,33 @@
+#about-me{
+  /* text-align: left; */
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding: 0 10vw;
+
+  gap: 5px;
+}
+
+#about-me>h3>a{
+  color: rgb(229, 177, 255);
+}
+#about-me>h3>a:hover{
+  color: aliceblue;
+}
+
+#about-me>img{
+  height: 150px;
+  width: 150px;
+  border: rgb(229, 177, 255) 0.5em solid;
+  border: #fff 0.5em solid;
+  border-radius: 100%;
+
+  animation: 5s linear 0s infinite alternate swing;
+}
+
+#about-me>p{
+  line-height: 1.8em;
+}
