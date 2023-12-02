@@ -24,7 +24,7 @@ import ProfilePic from "./assets/images/ProfilePic.jpg";
 import proj2Pic from "./assets/images/farah-ar.webp";
 
 function App() {
-  //states and refs
+  //states
   const [currentActivePage, setCurrentActivePage] = useState("hero");
 
   const aboutMe = {
