@@ -1,6 +1,4 @@
 import { useState } from "react";
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
 import "./App.css";
 
 import "./components/Animations.css";
@@ -25,9 +23,7 @@ import { FaGoogle } from "react-icons/fa";
 import ProfilePic from "./assets/images/ProfilePic.jpg";
 import proj2Pic from "./assets/images/farah-ar.webp";
 
-
 function App() {
-  // const [count, setCount] = useState(0);
   //states and refs
   const [currentActivePage, setCurrentActivePage] = useState("hero");
 
@@ -75,7 +71,7 @@ function App() {
       <PageSection id="hero-section">
         <HeroSection tagline="From engaging 3D and 2D video games to immersive AR/VR adventures and dynamic web solutions, welcome to my world of endless possibilities." />
       </PageSection>
-    )
+    );
   };
 
   const pageSectionAbout = () => {
@@ -106,15 +102,16 @@ function App() {
           </h3>
         </AboutMe>
       </PageSection>
-    )
-  }
+    );
+  };
 
   const pageSectionProjects = () => {
     return (
-    <PageSection id="projects-section" title="Projects I've Worked On">
+      <PageSection id="projects-section" title="Projects I've Worked On">
         <CardsContainer>
-          {projects.map((project) => (
+          {projects.map((project, key) => (
             <ProjectCard
+              key={key} //this part prevents me from getting the Warning: Each child in a list should have a unique "key" prop.
               title={project.title}
               description={project.description}
               imageLink={project.imageLink}
@@ -123,95 +120,79 @@ function App() {
           ))}
         </CardsContainer>
       </PageSection>
-    )
-  }
+    );
+  };
 
   const pageSectionContact = () => {
     return (
       <PageSection id="contact-section" title="Contact Me">
         <ContactForm />
       </PageSection>
-    )
-  }
+    );
+  };
+
+  const changeCurrentActivePage = (event) => {
+    setCurrentActivePage(event.target.classList[0]);
+  };
 
   return (
     <>
       <BackgroundImg />
       {/* Header (Nav bar) [Responsive for different screen sizes]*/}
       <Header>
-        <a href="#">Simon G. Asmar</a>
+        <a href="#" onClick={changeCurrentActivePage} className="hero">Simon G. Asmar</a>
         <ul>
           <li>
-            <a href="#hero-section">Home</a>
+            <a
+              href="#hero-section"
+              onClick={changeCurrentActivePage}
+              className="hero"
+            >
+              Home
+            </a>
           </li>
           <li>
-            <a href="#about-section">About</a>
+            <a
+              href="#about-section"
+              onClick={changeCurrentActivePage}
+              className="about"
+            >
+              About
+            </a>
           </li>
           <li>
-            <a href="#projects-section">Projects</a>
+            <a
+              href="#projects-section"
+              onClick={changeCurrentActivePage}
+              className="projects"
+            >
+              Projects
+            </a>
           </li>
           <li>
-            <a href="#contact-section">Contact</a>
+            <a
+              href="#contact-section"
+              onClick={changeCurrentActivePage}
+              className="contact"
+            >
+              Contact
+            </a>
           </li>
         </ul>
       </Header>
+
       {/* Section[hero]: welcome message or tagline + background image*/}
-      {/* <PageSection className="header-margin" id="hero-section"> */}
-      {/* <PageSection id="hero-section">
-        <HeroSection tagline="From engaging 3D and 2D video games to immersive AR/VR adventures and dynamic web solutions, welcome to my world of endless possibilities." />
-      </PageSection> */}
       {currentActivePage === "hero" && pageSectionHero()}
+
       {/* {pageSectionHero()}; */}
-      {/* Section[about]: info about me, skills and interests + (optional: add timeline of your journey) */}
-      {/* <PageSection id="about-section" title="About Me">
-        <AboutMe
-          name={aboutMe.name}
-          paragraph={aboutMe.paragraph}
-          profilePic={ProfilePic}
-          interests={aboutMe.interests}
-          skills={aboutMe.skills}
-        >
-          <h3>
-            <a href="https://www.github.com/simon1asmar" target="_blank">
-              <BsGithub />
-            </a>
-            &nbsp;
-            <a
-              href="https://stackoverflow.com/users/15034649/simongasmar"
-              target="_blank"
-            >
-              <FaStackOverflow />
-            </a>
-            &nbsp;
-            <a href="https://g.dev/Simon1Asmar" target="_blank">
-              <FaGoogle />
-            </a>
-          </h3>
-        </AboutMe>
-      </PageSection> */}
-      {/* {pageSectionAbout()}; */}
       {currentActivePage === "about" && pageSectionAbout()}
+
       {/* Section[projects]: at least 3 Cards (title, description, link) */}
-      {/* <PageSection id="projects-section" title="Projects I've Worked On">
-        <CardsContainer>
-          {projects.map((project) => (
-            <ProjectCard
-              title={project.title}
-              description={project.description}
-              imageLink={project.imageLink}
-              link={project.link}
-            />
-          ))}
-        </CardsContainer>
-      </PageSection> */}
-      {/* {pageSectionProjects()}; */}
       {currentActivePage === "projects" && pageSectionProjects()}
+
       {/* Contact-us form */}
-      {/* <PageSection id="contact-section" title="Contact Me">
-        <ContactForm />
-      </PageSection> */}
-      {/* {pageSectionContact()}; */}
       {currentActivePage === "contact" && pageSectionContact()}
+
       {/* Footer: name and copyright + social media links */}
       <Footer name="Simon George Asmar" copyrightYear="2023">
         <p>

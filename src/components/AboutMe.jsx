@@ -12,14 +12,14 @@ function AboutMe(props) {
       <p>{props.paragraph}</p>
 
       <CardsContainer>
-        {props.skills.map((skill)=>(
-          <div className='skill-or-interest'>{skill}</div>
+        {props.skills.map((skill, key)=>(
+          <div key={key} className='skill-or-interest'>{skill}</div>
         ))}
       </CardsContainer>
       
       <CardsContainer>
-        {props.interests.map((interest)=>(
-          <div className='skill-or-interest'>{interest}</div>
+        {props.interests.map((interest, key)=>(
+          <div key={key} className='skill-or-interest'>{interest}</div>
         ))}
       </CardsContainer>
     </section>
